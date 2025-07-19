@@ -9,23 +9,26 @@
 
   <style>
     html, body {
-      height: 100%;
       margin: 0;
       padding: 0;
-    }
-
-    body {
+      height: 100%;
       background-color: black;
       color: white;
       font-family: 'Inter Tight', sans-serif;
       font-weight: 200;
-      position: relative;
+      overflow-y: auto;
+    }
+
+    .page-container {
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
     }
 
     .hero-logo {
       position: absolute;
-      top: 25vh;
+      top: calc(25vh - 50px); /* Adjust for estimated midline */
       left: 50%;
       transform: translateX(-50%);
       width: 90%;
@@ -61,7 +64,7 @@
 
     .contact-grid {
       position: absolute;
-      bottom: 30px;
+      top: 93.75vh; /* 15/16ths down the viewport */
       left: 50%;
       transform: translateX(-50%);
       display: grid;
@@ -71,6 +74,7 @@
       font-size: 0.92rem;
       font-weight: 200;
       text-align: left;
+      padding-bottom: 20px;
     }
 
     .contact-label {
@@ -104,39 +108,3 @@
       .contact-grid {
         font-size: 0.85rem;
       }
-    }
-  </style>
-</head>
-<body>
-
-  <img src="Satomic Only (White on Black, Benzene).png" alt="Satomic Logo" class="hero-logo" />
-
-  <div class="center-section">
-    <div class="coming-soon">
-      C O M I N G &nbsp; S O O N
-    </div>
-
-    <div class="mission">
-      Our mission is to close the gap from idea to molecule<br>
-      with faster navigation of chemical space.
-    </div>
-  </div>
-
-  <div class="contact-grid">
-    <div class="contact-label">If you're a drug hunter:</div>
-    <div class="contact-email"><a href="mailto:partner@satomic.ai">partner@satomic.ai</a></div>
-
-    <div class="contact-label">If you want to join our mission:</div>
-    <div class="contact-email"><a href="mailto:careers@satomic.ai">careers@satomic.ai</a></div>
-
-    <div class="contact-label">If you're an investor:</div>
-    <div class="contact-email"><a href="mailto:invest@satomic.ai">invest@satomic.ai</a></div>
-
-    <div class="contact-label">For all other inquiries:</div>
-    <div class="contact-email"><a href="mailto:info@satomic.ai">info@satomic.ai</a></div>
-  </div>
-
-  v8
-</body>
-  
-</html>
