@@ -8,12 +8,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
       background-color: black;
       color: white;
       font-family: 'Inter Tight', sans-serif;
       font-weight: 200;
-      text-align: center;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-container {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
       padding: 40px 20px;
     }
 
@@ -22,24 +35,34 @@
       max-width: 600px;
       height: auto;
       display: block;
-      margin: 60px auto 20px auto; /* reduced margin below logo */
+      margin: 0 auto;
+    }
+
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: auto;
     }
 
     .coming-soon {
-      font-family: 'Inter Tight', sans-serif;
       font-size: 1.7rem;
       font-weight: 300;
       letter-spacing: 0.1em;
-      margin-bottom: 0px;
+      margin: 40px 0 10px;
       white-space: nowrap;
     }
 
     .mission {
-      font-size: 0.92rem;
+      font-size: 1.1rem;
       font-weight: 200;
-      margin: 10px auto 80px;
+      margin: 0 auto;
       max-width: 600px;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
     .contact-grid {
@@ -49,7 +72,10 @@
       align-items: start;
       font-size: 0.92rem;
       font-weight: 200;
-      gap: 18px 24px; /* more space between rows */
+      gap: 18px 24px;
+      margin-top: auto;
+      padding-top: 60px;
+      padding-bottom: 20px;
     }
 
     .contact-label {
@@ -73,49 +99,58 @@
       text-decoration: underline;
     }
 
+    /* Responsive styles */
     @media (max-width: 600px) {
       .coming-soon {
         font-size: 1.5rem;
+        margin-top: 30px;
       }
+
       .mission {
-        font-size: 0.88rem;
-        margin-bottom: 60px;
+        font-size: 0.92rem;
+        margin-top: 8px;
+        line-height: 1.4;
       }
+
       .contact-grid {
         font-size: 0.85rem;
+        padding-top: 40px;
       }
     }
   </style>
 </head>
 <body>
 
-  <img src="Satomic Only (White on Black, Benzene).png" alt="Satomic Logo" class="hero-logo" />
+  <div class="page-container">
 
-  <div class="coming-soon">
-    C O M I N G &nbsp; S O O N
-  </div>
+    <img src="Satomic Only (White on Black, Benzene).png" alt="Satomic Logo" class="hero-logo" />
 
-  <div class="mission">
-    Our mission is to close the gap from idea to molecule<br>
-    with faster navigation of chemical space.
-  </div>
+    <div class="center-content">
+      <div class="coming-soon">C O M I N G &nbsp; S O O N</div>
+      <div class="mission">
+        Our mission is to close the gap from idea to molecule<br>
+        with faster navigation of chemical space.
+      </div>
+    </div>
 
-  <div class="contact-grid">
-    <div class="contact-label">If you're a drug hunter:</div>
-    <div></div>
-    <div class="contact-email"><a href="mailto:partner@satomic.ai">partner@satomic.ai</a></div>
+    <div class="contact-grid">
+      <div class="contact-label">If you're a drug hunter:</div>
+      <div></div>
+      <div class="contact-email"><a href="mailto:partner@satomic.ai">partner@satomic.ai</a></div>
 
-    <div class="contact-label">If you want to join our mission:</div>
-    <div></div>
-    <div class="contact-email"><a href="mailto:careers@satomic.ai">careers@satomic.ai</a></div>
+      <div class="contact-label">If you want to join our mission:</div>
+      <div></div>
+      <div class="contact-email"><a href="mailto:careers@satomic.ai">careers@satomic.ai</a></div>
 
-    <div class="contact-label">If you're an investor:</div>
-    <div></div>
-    <div class="contact-email"><a href="mailto:invest@satomic.ai">invest@satomic.ai</a></div>
+      <div class="contact-label">If you're an investor:</div>
+      <div></div>
+      <div class="contact-email"><a href="mailto:invest@satomic.ai">invest@satomic.ai</a></div>
 
-    <div class="contact-label">For all other inquiries:</div>
-    <div></div>
-    <div class="contact-email"><a href="mailto:info@satomic.ai">info@satomic.ai</a></div>
+      <div class="contact-label">For all other inquiries:</div>
+      <div></div>
+      <div class="contact-email"><a href="mailto:info@satomic.ai">info@satomic.ai</a></div>
+    </div>
+
   </div>
 
 </body>
