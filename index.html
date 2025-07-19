@@ -11,6 +11,7 @@
     html, body {
       height: 100%;
       margin: 0;
+      padding: 0;
     }
 
     body {
@@ -18,58 +19,58 @@
       color: white;
       font-family: 'Inter Tight', sans-serif;
       font-weight: 200;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .hero-logo {
+      position: absolute;
+      top: 25vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 600px;
+      height: auto;
+    }
+
+    .center-section {
+      position: absolute;
+      top: 50vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
       padding: 0 20px;
     }
 
-    .content {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero-logo {
-      width: 90%;
-      max-width: 600px;
-      height: auto;
-      display: block;
-      margin: 60px auto 40px auto;
-    }
-
     .coming-soon {
-      font-family: 'Inter Tight', sans-serif;
       font-size: 1.7rem;
       font-weight: 300;
       letter-spacing: 0.1em;
-      margin-bottom: 0px;
       white-space: nowrap;
     }
 
     .mission {
       font-size: 1.1rem;
       font-weight: 200;
-      margin: 10px auto 0;
+      margin-top: 10px;
       max-width: 600px;
       line-height: 1.4;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .contact-grid {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
       display: grid;
       grid-template-columns: auto auto;
       column-gap: 10px;
-      justify-content: center;
-      align-items: start;
+      row-gap: 8px;
       font-size: 0.92rem;
       font-weight: 200;
-      gap: 8px 10px;
-      margin-top: auto;
-      padding-top: 60px;
-      padding-bottom: 20px;
+      text-align: left;
     }
 
     .contact-label {
@@ -99,7 +100,6 @@
       }
       .mission {
         font-size: 0.88rem;
-        margin-bottom: 100px;
       }
       .contact-grid {
         font-size: 0.85rem;
@@ -109,9 +109,9 @@
 </head>
 <body>
 
-  <div class="content">
-    <img src="Satomic Only (White on Black, Benzene).png" alt="Satomic Logo" class="hero-logo" />
+  <img src="Satomic Only (White on Black, Benzene).png" alt="Satomic Logo" class="hero-logo" />
 
+  <div class="center-section">
     <div class="coming-soon">
       C O M I N G &nbsp; S O O N
     </div>
@@ -135,6 +135,7 @@
     <div class="contact-label">For all other inquiries:</div>
     <div class="contact-email"><a href="mailto:info@satomic.ai">info@satomic.ai</a></div>
   </div>
-v6
+
 </body>
+  v8
 </html>
