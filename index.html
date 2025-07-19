@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Satomic Coming Soon</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300&display=swap" rel="stylesheet">
 
@@ -32,26 +33,27 @@
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
-      padding: 0 20px;
+      padding: 0 1rem;
+      max-widt: 90vw;
+      width: 100%;
     }
 
     .hero-logo {
-      width: 90%;
-      max-width: 600px;
+      width: clamp(200px, 90vw, 600px);
       height: auto;
       display: block;
       margin: 0 auto 10px auto;
     }
 
     .mission {
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       font-weight: 200;
-      max-width: 600px;
-      line-height: 1.4;
+      max-width: 90vw;
+      line-height: 1.5;
       margin: 0 auto;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space: normal;
+      overflow-wrap: breakw0rd;
+      text-align: center;
     }
 
     @media (max-width: 600px) {
