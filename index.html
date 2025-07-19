@@ -44,26 +44,27 @@
     }
 
     .contact-block {
-      display: table;
-      margin: 0 auto auto 10px ;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       font-size: 0.92rem;
       font-weight: 200;
+      gap: 8px;
     }
 
     .contact-row {
-      display: table-row;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
       line-height: 2;
     }
 
     .label-cell {
-      display: table-cell;
-      padding-right: 10px;
       text-align: right;
       white-space: nowrap;
     }
 
     .email-cell {
-      display: table-cell;
       font-family: monospace;
       font-weight: 100;
       text-align: left;
