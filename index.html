@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Satomic Coming Soon</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300&display=swap" rel="stylesheet">
 
   <style>
     body {
-      background-color: #000;
+      background-color: black;
       color: white;
       font-family: 'Inter Tight', sans-serif;
       font-weight: 200;
@@ -19,6 +19,7 @@
 
     .hero-logo {
       width: 90%;
+      max-width: 600px;
       height: auto;
       display: block;
       margin: 60px auto 40px auto;
@@ -36,72 +37,52 @@
     .mission {
       font-size: 0.92rem;
       font-weight: 200;
-      margin: 10px auto 160px;
+      margin: 10px auto 120px;
       max-width: 600px;
       line-height: 1.4;
     }
 
-    .contact-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: auto 32px auto;
+      justify-content: center;
+      align-items: start;
       font-size: 0.92rem;
       font-weight: 200;
-      gap: 12px;
+      gap: 12px 24px;
     }
 
-    .contact-row {
-      display: flex;
-      justify-content: center;
-      max-width: 90vw;
-    }
-
-    .label-cell {
+    .contact-label {
       text-align: right;
       white-space: nowrap;
-      padding-right: 12px;
-      flex-shrink: 1;
     }
 
-    .email-cell {
+    .contact-email {
       text-align: left;
-      white-space: nowrap;
       font-family: monospace;
       font-weight: 100;
-      flex-shrink: 1;
+      white-space: nowrap;
     }
 
-    .email-cell a {
+    .contact-email a {
       color: white;
       text-decoration: none;
     }
 
-    .email-cell a:hover {
+    .contact-email a:hover {
       text-decoration: underline;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 600px) {
+      .coming-soon {
+        font-size: 1.5rem;
+      }
       .mission {
         font-size: 0.88rem;
+        margin-bottom: 100px;
       }
-
-      .coming-soon {
-        font-size: 1.4rem;
-        letter-spacing: 0.2em;
-      }
-
-      .contact-block {
+      .contact-grid {
         font-size: 0.85rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .contact-block {
-        font-size: 0.78rem;
-      }
-
-      .label-cell, .email-cell {
-        font-size: 0.78rem;
       }
     }
   </style>
@@ -115,26 +96,26 @@
   </div>
 
   <div class="mission">
-    Our mission is to close the gap from idea to molecule<br>with faster navigation of chemical space.
+    Our mission is to close the gap from idea to molecule<br>
+    with faster navigation of chemical space.
   </div>
 
-  <div class="contact-block">
-    <div class="contact-row">
-      <div class="label-cell">If you’re a drug hunter:</div>
-      <div class="email-cell"><a href="mailto:partner@satomic.ai">partner@satomic.ai</a></div>
-    </div>
-    <div class="contact-row">
-      <div class="label-cell">If you want to join our mission:</div>
-      <div class="email-cell"><a href="mailto:careers@satomic.ai">careers@satomic.ai</a></div>
-    </div>
-    <div class="contact-row">
-      <div class="label-cell">If you’re an investor:</div>
-      <div class="email-cell"><a href="mailto:invest@satomic.ai">invest@satomic.ai</a></div>
-    </div>
-    <div class="contact-row">
-      <div class="label-cell">For all other inquiries:</div>
-      <div class="email-cell"><a href="mailto:info@satomic.ai">info@satomic.ai</a></div>
-    </div>
+  <div class="contact-grid">
+    <div class="contact-label">If you're a drug hunter:</div>
+    <div>:</div>
+    <div class="contact-email"><a href="mailto:partner@satomic.ai">partner@satomic.ai</a></div>
+
+    <div class="contact-label">If you want to join our mission:</div>
+    <div>:</div>
+    <div class="contact-email"><a href="mailto:careers@satomic.ai">careers@satomic.ai</a></div>
+
+    <div class="contact-label">If you're an investor:</div>
+    <div>:</div>
+    <div class="contact-email"><a href="mailto:invest@satomic.ai">invest@satomic.ai</a></div>
+
+    <div class="contact-label">For all other inquiries:</div>
+    <div>:</div>
+    <div class="contact-email"><a href="mailto:info@satomic.ai">info@satomic.ai</a></div>
   </div>
 
 </body>
