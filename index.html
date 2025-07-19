@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Satomic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Satomic Coming Soon</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300&display=swap" rel="stylesheet">
+
   <style>
     html, body {
       margin: 0;
@@ -11,83 +14,117 @@
       height: 100%;
       background-color: black;
       color: white;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 200;
+      overflow-y: auto;
     }
 
-    .container {
-      position: relative;
-      height: 100vh;
+    .page-container {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
+      position: relative;
     }
 
-    .logo {
+    .hero-section {
       position: absolute;
-      top: 25vh;
-      transform: translateY(-50%);
-      max-width: 90vw;
-      width: auto;
+      top: calc(25vh - 50px); /* Center midpoint of logo at 25% viewport height */
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero-logo {
+      width: 90%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px auto;
     }
 
     .mission {
-      margin-top: 20px;
-      text-align: center;
-      font-size: clamp(14px, 2.5vw, 24px);
+      font-size: 1.1rem;
+      font-weight: 200;
+      max-width: 600px;
       line-height: 1.4;
-      max-width: 90vw;
+      margin: 0 auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .contact {
-      position: absolute;
-      bottom: 10vh;
-      width: 100%;
-      text-align: center;
-      font-size: clamp(12px, 1.5vw, 16px);
-      line-height: 1.6;
-    }
-
-    .contact span {
-      display: inline-block;
-      min-width: 150px;
-      text-align: right;
-      margin-right: 10px;
-    }
-
-    .contact p {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 4px 0;
-      flex-wrap: wrap;
-    }
-
-    @media (max-height: 500px) {
-      .contact {
-        position: static;
-        margin-top: auto;
-        padding-bottom: 20px;
+    @media (max-width: 600px) {
+      .mission {
+        font-size: 0.88rem;
+        white-space: normal;
       }
     }
 
+    .contact-grid {
+      position: absolute;
+      bottom: 10vh; /* Anchored bottom to 90% of viewport height */
+      left: 50%;
+      transform: translateX(-50%);
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 10px;
+      row-gap: 8px;
+      font-size: 0.92rem;
+      font-weight: 200;
+      text-align: left;
+      padding-bottom: 0;
+    }
+
+    .contact-label {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .contact-email {
+      text-align: left;
+      font-family: monospace;
+      font-weight: 100;
+      white-space: nowrap;
+    }
+
+    .contact-email a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-email a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .contact-grid {
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="satomic_logo.png" alt="Satomic Logo" class="logo" />
-    <div class="mission">
-      Our mission is to close the gap<br />
-      from idea to molecule<br />
-      with faster navigation of chemical<br />
-      space.
+  <div class="page-container">
+    <div class="hero-section">
+      <img src="Satomic Only (White on Black, Benzene).png" alt="Satomic Logo" class="hero-logo" />
+      <div class="mission">
+        Our mission is to close the gap from idea to molecule with faster navigation of chemical space.
+      </div>
     </div>
-    <div class="contact">
-      <p><span>If you're a drug hunter:</span> partner@satomic.ai</p>
-      <p><span>If you want to join our mission:</span> careers@satomic.ai</p>
-      <p><span>If you're an investor:</span> invest@satomic.ai</p>
-      <p><span>For all other inquiries:</span> info@satomic.ai</p>
+
+    <div class="contact-grid">
+      <div class="contact-label">If you're a drug hunter:</div>
+      <div class="contact-email"><a href="mailto:partner@satomic.ai">partner@satomic.ai</a></div>
+
+      <div class="contact-label">If you want to join our mission:</div>
+      <div class="contact-email"><a href="mailto:careers@satomic.ai">careers@satomic.ai</a></div>
+
+      <div class="contact-label">If you're an investor:</div>
+      <div class="contact-email"><a href="mailto:invest@satomic.ai">invest@satomic.ai</a></div>
+
+      <div class="contact-label">For all other inquiries:</div>
+      <div class="contact-email"><a href="mailto:info@satomic.ai">info@satomic.ai</a></div>
     </div>
   </div>
 </body>
