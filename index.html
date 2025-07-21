@@ -108,6 +108,39 @@
       text-decoration: underline;
     }
 
+    .contact-subscribe form {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    
+    .contact-subscribe input[type="email"] {
+      background-color: #222;
+      color: #ccc;
+      border: 1px solid #444;
+      font-family: monospace;
+      font-size: 0.9rem;
+      padding: 4px 8px;
+      border-radius: 3px;
+      width: 160px;
+    }
+    
+    .contact-subscribe button {
+      background-color: #fff;
+      color: #000;
+      font-size: 0.9rem;
+      font-weight: 400;
+      border: none;
+      padding: 4px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .contact-subscribe button:hover {
+      background-color: #ddd;
+    }
+
     @media (max-height: 500px) {
       html, body {
         overflow-y: auto;
@@ -156,6 +189,14 @@
 
       <div class="contact-label">Contact Satomic:</div>
       <div class="contact-email"><a href="mailto:info@satomic.ai">info@satomic.ai</a></div>
+
+      <div class="contact-label">Get updates on Satomic:</div>
+<div class="contact-subscribe">
+  <form action="https://formspree.io/f/myzpkarn" method="POST">
+    <input type="hidden" name="_redirect" value="https://satomic.ai/thank-you.html" />
+    <input type="email" name="email" placeholder="your_email@here" required>
+    <button type="submit">Join</button>
+  </form>
     </div>
   </div>
 </body>
