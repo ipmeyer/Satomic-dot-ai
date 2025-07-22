@@ -123,17 +123,23 @@
       width: 115px;
     }
     
-    .contact-subscribe button {
-      font-family: 'Inter Tight', sans-serif;
-      font-weight: 200;
-      font-size: 0.85rem;
+    .contact-subscribe button.icon-button {
       background-color: #555;
-      color: white;
       border: none;
-      border-radius: 3px;
-      padding: 4px 10px;
+      padding: 4px;
+      border-radius: 4px;
       cursor: pointer;
       transition: background-color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+    }
+
+    .contact-subscribe button.icon-button img {
+      width: 16px;
+      height: 16px;
     }
     
     .contact-subscribe button:hover {
@@ -192,7 +198,9 @@
       <div class="contact-subscribe">
         <form id="subscribe-form">
           <input type="email" name="email" placeholder="your_email@here" required>
-          <button type="submit">Join</button>
+          <button type="submit" class="icon-button">
+            <img src="Favicon (1).png" alt="Join" />
+          </button>
         </form>
       </div>
     </div>
