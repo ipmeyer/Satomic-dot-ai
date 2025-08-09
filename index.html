@@ -194,6 +194,25 @@
         margin-top: 2rem;
       }
     }
+    /* cascade fade-in */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade { opacity: 0; animation: fadeUp 520ms ease forwards; }
+    
+    /* staggered delays */
+    .d1 { animation-delay: .15s; }
+    .d2 { animation-delay: .35s; }
+    .d3 { animation-delay: .55s; }
+    .d4 { animation-delay: .75s; }
+    .d5 { animation-delay: .95s; }
+    .d6 { animation-delay: 1.15s; }
+    .d7 { animation-delay: 1.35s; }
+    .d8 { animation-delay: 1.55s; }
+    
+    /* mission lines rendered as blocks so each fades separately */
+    .mission-line { display: block; }
   </style>
 </head>
 <body>
@@ -201,26 +220,27 @@
     <div class="hero-section">
       <img src="Satomic Only (White on Black, Benzene).png" alt="Satomic Logo" class="hero-logo" />
       <div class="mission">
-        <div class ="mission-tagline">We make molecules better.</div>
-        Our mission is to close the gap from idea to molecule<br>with faster navigation of chemical space.
+        <div class="mission-tagline fade d1">We make molecules better.</div>
+        <span class="mission-line fade d2">Our mission is to close the gap from idea to molecule</span>
+        <span class="mission-line fade d3">with faster navigation of chemical space.</span>
       </div>
     </div>
 
     <div class="contact-grid">
-      <div class="contact-label">Discover with Satomic:</div>
-      <div class="contact-email"><a href="mailto:partner@satomic.ai">partner@satomic.ai</a></div>
+      <div class="contact-label fade d4">Discover with Satomic:</div>
+      <div class="contact-email fade d4"><a href="mailto:partner@satomic.ai">partner@satomic.ai</a></div>
 
-      <div class="contact-label">Join Satomic's Team:</div>
-      <div class="contact-email"><a href="/careers.html">satomic.ai/careers</a></div>
+      <div class="contact-label fade d5">Join Satomic's Team:</div>
+      <div class="contact-email fade d5"><a href="/careers.html">satomic.ai/careers</a></div>
 
       <!---<div class="contact-label">Invest in Satomic:</div>
       <div class="contact-email"><a href="mailto:invest@satomic.ai">invest@satomic.ai</a></div>--->
 
-      <div class="contact-label">Contact Satomic:</div>
-      <div class="contact-email"><a href="mailto:info@satomic.ai">info@satomic.ai</a></div>
+      <div class="contact-label fade d6">Contact Satomic:</div>
+      <div class="contact-email fade d6"><a href="mailto:info@satomic.ai">info@satomic.ai</a></div>
 
-      <div class="contact-label">Get updates on Satomic:</div>
-      <div class="contact-subscribe">
+      <div class="contact-labe fade d7l">Get updates on Satomic:</div>
+      <div class="contact-subscribe fade d8">
         <form id="subscribe-form">
           <input type="email" name="email" placeholder="your_email@here" required>
           <button type="submit" class="icon-button">
