@@ -99,7 +99,16 @@
       text-decoration: none;
     }
     .value a:hover { text-decoration: underline; }
-
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade { opacity: 0; animation: fadeUp 520ms ease forwards; }
+    
+    /* staggered delays */
+    .d0 { animation-delay: .1s; }
+    .d1 { animation-delay: .5s; }
+    
     /* Short/tight viewports: allow scroll, un-absolute the blocks to stack */
     @media (max-height: 500px) {
       html, body { overflow-y: auto; }
@@ -118,13 +127,13 @@
         between idea and molecule.
       </div>
 
-      <div class="subline">
+      <div class="subline fade d0">
         Browse open positions on our
         <a href="https://ats.rippling.com/satomic/jobs" target="_blank" rel="noopener">Job Board</a>
       </div>
     </div>
 
-    <div class="contact-grid">
+    <div class="contact-grid fade d1">
       <div class="label">Or reach out directly:</div>
       <div class="value"><a href="mailto:careers@satomic.ai">careers@satomic.ai</a></div>
     </div>
