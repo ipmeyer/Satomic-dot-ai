@@ -1,1 +1,134 @@
-<!--- test --->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers — Satomic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;500&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+      color: #fff;
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 200;
+      overflow: hidden;
+    }
+
+    .page {
+      min-height: 90vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0 1rem 4vh 1rem;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    /* Headline: same size/weight as “We make molecules better.” */
+    .headline-wrap {
+      position: absolute;
+      top: calc(25vh - 50px);   /* roughly where the logo sits on home */
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      padding: 0 1rem;
+      max-width: 90vw;
+      width: 100%;
+    }
+
+    .headline {
+      font-weight: 500; /* MEDIUM */
+      font-size: clamp(1.1rem, 3.5vw, 1.8rem);
+      line-height: 1.35;
+      margin: 0 0 10px 0;
+    }
+
+    /* Subline: same style as home “Our mission is …” */
+    .subline {
+      font-size: clamp(1rem, 3vw, 1.6rem);
+      font-weight: 200;
+      line-height: 1.5;
+      margin: 0 auto;
+      max-width: 90vw;
+      text-align: center;
+    }
+
+    .subline a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: 300; /* light-ish by default */
+      transition: font-weight 120ms ease;
+    }
+    .subline a:hover,
+    .subline a:focus-visible {
+      font-weight: 500; /* MEDIUM on hover/focus */
+      outline: none;
+    }
+
+    /* Contact grid: same format as home, single row */
+    .contact-grid {
+      position: absolute;
+      bottom: 10vh; /* anchored near bottom */
+      left: 50%;
+      transform: translateX(-50%);
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 10px;
+      row-gap: 8px;
+      font-size: clamp(0.85rem, 2vw, 1.1rem);
+      font-weight: 200;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .label {
+      text-align: right;
+    }
+    .value {
+      text-align: left;
+      font-family: monospace;
+      font-weight: 100;
+    }
+    .value a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .value a:hover { text-decoration: underline; }
+
+    /* Short/tight viewports: allow scroll, un-absolute the blocks to stack */
+    @media (max-height: 500px) {
+      html, body { overflow-y: auto; }
+      .page { height: auto; min-height: unset; padding-top: 2vh; padding-bottom: 5vh; }
+      .headline-wrap, .contact-grid { position: static; transform: none; margin: 0 auto; }
+      .contact-grid { margin-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="headline-wrap">
+      <div class="headline">
+        Join our team in helping close the gap<br>
+        between idea and molecule.
+      </div>
+
+      <div class="subline">
+        Browse open positions on our
+        <a href="https://ats.rippling.com/satomic/jobs" target="_blank" rel="noopener">Job Board</a>
+      </div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="label">Or reach out directly:</div>
+      <div class="value"><a href="mailto:careers@satomic.ai">careers@satomic.ai</a></div>
+    </div>
+
+  </div>
+</body>
+</html>
