@@ -108,6 +108,7 @@
     /* staggered delays */
     .d0 { animation-delay: .5s; }
     .d1 { animation-delay: 1.0s; }
+    .d2 { animation-delay: 1.5s; }
     
     /* Short/tight viewports: allow scroll, un-absolute the blocks to stack */
     @media (max-height: 500px) {
@@ -122,20 +123,20 @@
   <div class="page">
 
     <div class="headline-wrap">
-      <div class="headline">
+      <div class="headline fade d0">
         Join our team in helping close the gap<br>
         between idea and molecule.
       </div>
 
-      <div class="subline fade d0">
+      <div class="subline fade d1">
         Browse open positions on our
         <a href="https://ats.rippling.com/satomic/jobs" target="_blank" rel="noopener">Job Board</a>
       </div>
     </div>
 
     <div class="contact-grid">
-      <div class="label fade d1">Or reach out directly:</div>
-      <div class="value fade d1"><a href="mailto:careers@satomic.ai">careers@satomic.ai</a></div>
+      <div class="label fade d2">Or reach out directly:</div>
+      <div class="value fade d2"><a href="mailto:careers@satomic.ai">careers@satomic.ai</a></div>
     </div>
 
   </div>
