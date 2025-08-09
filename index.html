@@ -141,10 +141,34 @@
       width: 18px;
       height: 18px;
       filter: invert(100%);
+      transform-origin 50% 50%;
+      transition: transform 140ms ease;
     }
     
     .contact-subscribe button:hover {
       background-color: #777;
+    }
+    /* rotate on hover/focus (desktop + keyboard) */
+    .contact-subscribe button.icon-button:hover img,
+    .contact-subscribe button.icon-button:focus-visible img {
+      transform: rotate(15deg);
+    }
+
+    .contact-subscribe button.icon-button:active img {
+      transform: rotate(12deg) scale(0.96);
+    }
+
+    /* optional a11y: visible focus ring on the button */
+    .contact-subscribe button.icon-button:focus-visible {
+      outline: 2px solid #aaa;
+      outline-offset: 2px;
+    }
+    
+    /* optional: respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .contact-subscribe button.icon-button img {
+        transition: none;
+      }
     }
 
     @media (max-height: 500px) {
@@ -186,11 +210,11 @@
       <div class="contact-label">Discover with Satomic:</div>
       <div class="contact-email"><a href="mailto:partner@satomic.ai">partner@satomic.ai</a></div>
 
-      <div class="contact-label">Work for Satomic:</div>
+      <div class="contact-label">Join Satomic's Team:</div>
       <div class="contact-email"><a href="mailto:careers@satomic.ai">careers@satomic.ai</a></div>
 
-      <div class="contact-label">Invest in Satomic:</div>
-      <div class="contact-email"><a href="mailto:invest@satomic.ai">invest@satomic.ai</a></div>
+      <!---<div class="contact-label">Invest in Satomic:</div>
+      <div class="contact-email"><a href="mailto:invest@satomic.ai">invest@satomic.ai</a></div>--->
 
       <div class="contact-label">Contact Satomic:</div>
       <div class="contact-email"><a href="mailto:info@satomic.ai">info@satomic.ai</a></div>
