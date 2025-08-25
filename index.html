@@ -214,6 +214,19 @@
     
     /* mission lines rendered as blocks so each fades separately */
     .mission-line { display: block; }
+
+    .footer-address {
+      position: absolute;
+      bottom: 1.5vh;  /* just above page bottom */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem; /* smaller than contact grid */
+      font-weight: 200;   /* light */
+      color: #ccc;        /* subtle grey */
+      text-align: center;
+      line-height: 1.4;
+      white-space: pre-line; /* preserves line breaks */
+    }
   </style>
 </head>
 <body>
@@ -249,6 +262,10 @@
           </button>
         </form>
       </div>
+    </div>
+    <div class="footer-address">
+      11585 Sorrento Valley Road<br>
+      Suite 106, San Diego CA 92121
     </div>
   </div>
 
