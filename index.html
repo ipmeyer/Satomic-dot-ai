@@ -141,7 +141,7 @@
       width: 18px;
       height: 18px;
       filter: invert(100%);
-      transform-origin 50% 50%;
+      transform-origin: 50% 50%;
       transition: transform 300ms ease;
     }
     
@@ -203,36 +203,37 @@
     
     /* staggered delays */
     .d0 { animation-delay: .1s; }
-    .d1 { animation-delay: .5s; }
-    .d2 { animation-delay: 1.5s; }
-    .d3 { animation-delay: 1.5s; }
-    .d4 { animation-delay: 2.2s; }
-    .d5 { animation-delay: 2.3s; }
-    .d6 { animation-delay: 2.4s; }
-    .d7 { animation-delay: 2.5s; }
-    .d8 { animation-delay: 2.6s; }
+    .d1 { animation-delay: .6s; }
+    .d2 { animation-delay: 1.6s; }
+    .d3 { animation-delay: 1.6s; }
+    .d4 { animation-delay: 2.3s; }
+    .d5 { animation-delay: 2.4s; }
+    .d6 { animation-delay: 2.5s; }
+    .d7 { animation-delay: 2.6s; }
+    .d8 { animation-delay: 2.7s; }
     
     /* mission lines rendered as blocks so each fades separately */
     .mission-line { display: block; }
 
     .footer-address {
       position: absolute;
-      bottom: 0.5vh;  /* just above page bottom */
+      /* sit right above the device safe-area or ~0.6vh, whichever is larger */
+      bottom: max(0.6vh, env(safe-area-inset-bottom));
       left: 50%;
       transform: translateX(-50%);
-      font-size: 0.75rem; /* smaller than contact grid */
-      font-weight: 200;   /* light */
-      color: #ccc;        /* subtle grey */
+      font-size: 0.75rem;   /* small */
+      font-weight: 200;     /* light */
+      color: #ccc;
       text-align: center;
-      line-height: 1.0;
-      white-space: pre-line; /* preserves line breaks */
+      line-height: 1;       /* tighter lines */
+      white-space: pre-line;/* keep the <br> */
     }
   </style>
 </head>
 <body>
   <div class="page-container">
     <div class="hero-section">
-      <img src="Satomic Only (White on Black, Benzene).png" alt="Satomic Logo" class="hero-logo" />
+      <img src="Satomic Only (White on Black, Benzene).png" alt="Satomic Logo" class="hero-logo fade d0" />
       <div class="mission">
         <div class="mission-tagline fade d1">We make molecules better.</div>
         <span class="mission-line fade d2">Our mission is to close the gap from idea to molecule</span>
@@ -263,7 +264,7 @@
         </form>
       </div>
     </div>
-    <div class="footer-address d8">
+    <div class="footer-address fade d8">
       11585 Sorrento Valley Road, Suite 106<br>
       San Diego, California 92121
     </div>
