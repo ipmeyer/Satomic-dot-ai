@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>Satomic - Coming Soon</title>
   <link rel="icon" href="/Favicon (1).png" type="image/x-icon" />
 
@@ -73,7 +73,8 @@
 
     .contact-grid {
       position: absolute;
-      bottom: 10vh;
+      /* lift slightly so it won’t collide with the fixed footer */
+      bottom: calc(10vh + max(14px, env(safe-area-inset-bottom)));
       left: 50%;
       transform: translateX(-50%);
       display: grid;
@@ -148,23 +149,17 @@
     .contact-subscribe button:hover {
       background-color: #777;
     }
-    /* rotate on hover/focus (desktop + keyboard) */
     .contact-subscribe button.icon-button:hover img,
     .contact-subscribe button.icon-button:focus-visible img {
       transform: rotate(180deg);
     }
-
     .contact-subscribe button.icon-button:active img {
       transform: rotate(12deg) scale(0.96);
     }
-
-    /* optional a11y: visible focus ring on the button */
     .contact-subscribe button.icon-button:focus-visible {
       outline: 2px solid #aaa;
       outline-offset: 2px;
     }
-    
-    /* optional: respect reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .contact-subscribe button.icon-button img {
         transition: none;
@@ -172,36 +167,14 @@
     }
 
     @media (max-height: 500px) {
-      html, body {
-        overflow-y: auto;
-      }
-
-      .page-container {
-        height: auto;
-        min-height: unset;
-        padding-top: 2vh;
-        padding-bottom: 5vh;
-      }
-
-      .hero-section,
-      .contact-grid {
-        position: static;
-        transform: none;
-        margin: 0 auto;
-      }
-
-      .contact-grid {
-        margin-top: 2rem;
-      }
+      html, body { overflow-y: auto; }
+      .page-container { height: auto; min-height: unset; padding-top: 2vh; padding-bottom: 5vh; }
+      .hero-section, .contact-grid { position: static; transform: none; margin: 0 auto; }
+      .contact-grid { margin-top: 2rem; }
     }
-    /* cascade fade-in */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+
+    @keyframes fadeUp { from {opacity:0; transform:translateY(8px);} to {opacity:1; transform:translateY(0);} }
     .fade { opacity: 0; animation: fadeUp 520ms ease forwards; }
-    
-    /* staggered delays */
     .d0 { animation-delay: .1s; }
     .d1 { animation-delay: .8s; }
     .d2 { animation-delay: 1.5s; }
@@ -211,16 +184,14 @@
     .d6 { animation-delay: 2.4s; }
     .d7 { animation-delay: 2.5s; }
     .d8 { animation-delay: 2.7s; }
-    
-    /* mission lines rendered as blocks so each fades separately */
     .mission-line { display: block; }
 
+    /* FIX: keep address centered and above iOS bottom bar */
     .footer-address {
-      position: absolute;
-      bottom: calc(env(safe-area-inset-bottom, 0) + 8px); /* above iOS home bar */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
+      position: fixed;
+      bottom: max(10px, env(safe-area-inset-bottom));
+      left: 0;
+      right: 0;
       text-align: center;
       font-size: 0.75rem;
       font-weight: 200;
@@ -228,33 +199,7 @@
       line-height: 1.15;
       margin: 0;
       padding: 0;
-    }
-
-    @media (orientation: portrait) and (max-width: 430px) {
-      .contact-grid { bottom: 14vh; }
-    }
-
-    @media (max-height: 560px) {
-      html, body { overflow-y: auto; }
-
-      .page-container {
-        min-height: unset;
-        height: auto;
-        padding-top: 2vh;
-        padding-bottom: max(12px, env(safe-area-inset-bottom));
-      }
-
-      .hero-section,
-      .contact-grid,
-      .footer-address {
-        position: static;
-        transform: none;
-        margin: 0 auto;
-        width: 100%;
-      }
-
-      .contact-grid { margin-top: 2rem; }
-      .footer-address { margin-top: 1rem; }
+      pointer-events: none; /* so taps near the bottom bar don’t hit the footer */
     }
   </style>
 </head>
@@ -292,10 +237,11 @@
         </form>
       </div>
     </div>
-    <div class="footer-address fade d8">
-      11585 Sorrento Valley Road, Suite 106<br>
-      San Diego, California 92121
-    </div>
+  </div>
+
+  <div class="footer-address fade d8">
+    11585 Sorrento Valley Road, Suite 106<br>
+    San Diego, California 92121
   </div>
 
   <script>
