@@ -216,17 +216,15 @@
     .mission-line { display: block; }
 
     .footer-address {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: max(2vh, calc(env(safe-area-inset-bottom) + 6px)); /* visible on iOS */
-      text-align: center;
+      position: relative;          /* no longer absolute */
+      margin-top: 1.5rem;          /* space from contact grid */
+      width: 100%;
+      text-align: center;          /* center horizontally */
       font-size: 0.75rem;
       font-weight: 200;
       color: #ccc;
       line-height: 1.15;
-      margin: 0;
-      padding: 0;
+      padding-bottom: env(safe-area-inset-bottom, 0); /* respect iOS safe area */
     }
 
     @media (orientation: portrait) and (max-width: 430px) {
